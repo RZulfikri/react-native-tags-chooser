@@ -1,6 +1,6 @@
 {
   "name": "react-native-tags-chooser",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Simple selection item component, using dropdown and tags.",
   "main": "index.js",
   "scripts": {
