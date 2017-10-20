@@ -23,40 +23,53 @@ import {Select, Option} from 'react-native-tags-chooser'
 ...
 
 export default class exsample extends Component {
-  this.state = {
-            tags : [{id : 1, name : "mantap"}, {id : 2, name : "joss"}, {id : 3, name : "hallo"}, {id : 4, name : "olahraga"}, {id : 5, name : "kuliner"}, {id : 6, name : "travelling"}, {id : 7, name : "jalan jalan"}]
+  constructor() {
+    this.state = {
+      tags: [
+        { id: 1, name: "mantap" },
+        { id: 2, name: "joss" },
+        { id: 3, name: "hallo" },
+        { id: 4, name: "olahraga" },
+        { id: 5, name: "kuliner" },
+        { id: 6, name: "travelling" },
+        { id: 7, name: "jalan jalan" }
+      ]
+    };
   }
-  
+
   // Handle after selct tags
   // value of data is array of selected tag. object like tags array.
   _onSelect(data) {
-    console.log(data)
+    console.log(data);
   }
-  
-  render(){
-    let topic_options = null
-    if(this.state.topics.length >= 1){
-        topic_options = this.state.tags.map((row, index) => <Option key={index} value={row.id}>{row.name}</Option>)
+
+  render() {
+    let topic_options = null;
+    if (this.state.topics.length >= 1) {
+      topic_options = this.state.tags.map((row, index) => (
+        <Option key={index} value={row.id}>
+          {row.name}
+        </Option>
+      ));
     }
-    return(
+    return (
       <View style={styles.container}>
-        <StatusBar hidden/>
-          <Text style={styles.welcome}>
-            Welcome to React Native!
-          </Text>
+        <StatusBar hidden />
+        <Text style={styles.welcome}>Welcome to React Native!</Text>
         <View>
           <Select
-              onSelect={this._onSelectc.bind(this)}
-              textStyle={{fontSize : 16, marginLeft : 8, marginRight : 8,}}
-              backdropStyle={{ backgroundColor: '#fff' }}
-              >
-              {topic_options}
-          </Select>          
+            onSelect={this._onSelectc.bind(this)}
+            textStyle={{ fontSize: 16, marginLeft: 8, marginRight: 8 }}
+            backdropStyle={{ backgroundColor: "#fff" }}
+          >
+            {topic_options}
+          </Select>
         </View>
-       </View>
-    )
+      </View>
+    );
   }
 }
+
 ```
 
 
